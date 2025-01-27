@@ -1,7 +1,7 @@
 import "./globals.css";
 import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/footer";
-import { Poppins, Geist_Mono } from "next/font/google";
+import { Poppins } from "next/font/google";
 
 // Import Poppins with specific weights
 const poppins = Poppins({
