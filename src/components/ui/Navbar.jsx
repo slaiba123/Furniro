@@ -18,7 +18,7 @@ export default function Navbar() {
           <nav className="space-x-12">
             <a href="/" className="text-black hover:text-gray-800 hover:font-bold">Home</a>
             <a href="/shop" className="text-black hover:text-gray-800 hover:font-bold">Shop</a>
-            <a href="/about" className="text-black hover:text-gray-800 hover:font-bold">About</a>
+            <a href="/" className="text-black hover:text-gray-800 hover:font-bold">About</a>
           </nav>
           
           <div className="flex items-center justify-between  space-x-10">

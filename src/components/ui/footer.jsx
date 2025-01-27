@@ -14,8 +14,8 @@ function Footer() {
             <ul>
               <li className="mb-8"><a href="/" className="text-gray-800 hover:underline font-bold">Home</a></li>
               <li className="mb-8"><a href="/shop" className="text-gray-800 hover:underline font-bold">Shop</a></li>
-              <li className="mb-8"><a href="/About" className="text-gray-800 hover:underline font-bold">About</a></li>
-              <li><a href="/About" className="text-gray-800 hover:underline font-bold">Contact</a></li>
+              <li className="mb-8"><a href="/" className="text-gray-800 hover:underline font-bold">About</a></li>
+              <li><a href="/" className="text-gray-800 hover:underline font-bold">Contact</a></li>
             </ul>
           </div>
 
