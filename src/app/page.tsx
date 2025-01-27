@@ -2,7 +2,7 @@ import BrowseCategories from '@/components/ui/home-component/BrowseCategories';
 import ProductGrid from '@/components/ui/home-component/ProductGrid';
 import Intro from '@/components/ui/home-component/Intro';
 import RoomInspiration from '@/components/ui/home-component/carousel';
-import ImagesCollage from '@/components/ui/home-component/imagescollage'
+
 const products = [
   { name: 'Sytherine', description:'Stylish cafe chair',price: 'Rp 2,500,000', image: '/images/image 4.png' },
   { name: 'Levolosa',description:'Stylish cafe chair', price: 'Rp 3,000,000', image: '/images/image 1.png' },
