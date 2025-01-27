@@ -7,7 +7,7 @@ export default function BrowseCategories() {
         <div className="flex justify-center mt-6 gap-4">
           {categories.map((category) => (
             <div key={category} className="category-card p-4 ">
-              <img src={`/images/${category.toLowerCase()}.png`} alt={category} className="rounded-lg" />
+              <img src={`/images/${category}.png`} alt={category} className="rounded-lg" />
               <h3 className="mt-2 text-xl  font-semibold text-[#333333]">{category}</h3>
             </div>
           ))}
