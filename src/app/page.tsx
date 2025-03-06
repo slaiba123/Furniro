@@ -21,7 +21,7 @@ export default function HomePage() {
       <BrowseCategories />
       <ProductGrid products={products} title={title}/>
       <RoomInspiration/>
-      <img src="/images/homediv.png" alt="" className='p-[3rem]'/>
+      <img src="/images/homediv.png" alt="" className=' p-2 md:p-[3rem]'/>
     </main>
   );
 }
