@@ -8,22 +8,21 @@ import {
   SheetDescription,
 } from "@/components/ui/sheet";
 import Link from "next/link";
+import { useSelector, useDispatch } from "react-redux";
+import {addToCart, removeFromCart,decreaseQuantity} from "@/app/store/slices/cartSlice";
+export default function ShoppingCart({item}) {
 
-export default function ShoppingCart() {
-  const [cartItems, setCartItems] = useState([
-    { id: 1, name: "Asgaard sofa", price: 250000, quantity: 1, image: "/images/sofa1.png" },
-    { id: 2, name: "Casaliving Wood", price: 270000, quantity: 1, image: "/images/sofa2.png" },
-  ]);
-
-  const removeItem = (id) => {
-    setCartItems(cartItems.filter((item) => item.id !== id));
-  };
-
-  const subtotal = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
-
+  const { cartItems, totalQuantity, totalPrice } = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
   return (
     <Sheet>
-      <SheetTrigger className="px-6 py-2 text-black bg-none border border-black rounded-lg hover:bg-black  hover:text-white">Add to Cart</SheetTrigger>
+      <SheetTrigger asChild>
+       <button 
+       className="px-6 py-2 text-black bg-none border border-black rounded-lg hover:bg-black hover:text-white"
+       onClick={() => dispatch(addToCart(item))}
+     >
+       Add to Cart
+     </button></SheetTrigger>
       <SheetContent className="w-[400px] sm:w-[540px]">
         <SheetHeader>
           <SheetTitle className="border-b-2 border-[#D9D9D9] mx-2 mr-10">Shopping Cart</SheetTitle>
@@ -47,7 +46,7 @@ export default function ShoppingCart() {
                   </p>
                 </div>
                 <button
-                  onClick={() => removeItem(item.id)}
+                  onClick={() => dispatch(decreaseQuantity(item))}
                   className="text-gray-400 hover:text-gray-600"
                 >
                   ✖
@@ -61,7 +60,7 @@ export default function ShoppingCart() {
             <p className="text-lg font-medium">
               Subtotal:{" "}
               <span className="text-[#B88E2F]">
-                Rs. {subtotal.toLocaleString()}
+                Rs. {totalPrice.toLocaleString()}
               </span>
             </p>
           </div>

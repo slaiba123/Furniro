@@ -174,7 +174,7 @@ import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Footer2 from "@/components/ui/Footer2";
-
+import Link from 'next/link';
 export default function Checkout() {
   const { register, handleSubmit } = useForm();
   const [selectedMethod, setSelectedMethod] = useState("");
@@ -324,7 +324,9 @@ export default function Checkout() {
               other purposes described in our <strong>privacy policy.</strong>
             </p>
             <div className="mx-0 sm:mx-4 lg:mx-[4rem]">
+              <Link href='/Order-placed'>
               <button className="w-full mt-4 bg-transparent text-black border-black border p-3 rounded-xl lg:mr-[5rem]">Place Order</button>
+              </Link>
             </div>
           </div>
         </div>

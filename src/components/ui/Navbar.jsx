@@ -1,71 +1,14 @@
-// export default function Navbar() {
-//     return (
-//       <header className="bg-white ">
-//         <div className="container mx-auto flex justify-between items-center py-4 px-10">
-          
-//           <div className="text-xl font-bold flex items-center space-x-2">
-//             <img 
-//                 src="/images/Logo.png" 
-//                 alt="Furniro Logo" 
-//                 className="w-10 h- object-cover"
-//             />
-//             <a href="/" className="text-black hover:text-gray-600 mt-2 text-2xl font-Montserrat">
-//                 Furniro
-//             </a>
-//           </div>
-
-          
-//           <nav className="space-x-12">
-//             <a href="/" className="text-black hover:text-gray-800 hover:font-bold">Home</a>
-//             <a href="/shop" className="text-black hover:text-gray-800 hover:font-bold">Shop</a>
-//             <a href="/" className="text-black hover:text-gray-800 hover:font-bold">About</a>
-//           </nav>
-          
-//           <div className="flex items-center justify-between  space-x-10">
-//             <a href="/profile" className="text-gray-700 hover:text-gray-900">
-//             <img 
-//                 src="/images/Person.png" 
-//                 alt="Furniro Logo" 
-//                 className="w-6 h-5 object-cover"
-//             />
-//             </a>
-//             <a href="/search" className="text-gray-700 hover:text-gray-900">
-//             <img 
-//                 src="/images/search.png" 
-//                 alt="Furniro Logo" 
-//                 className="w-5 h-5 object-cover"
-//             />
-//             </a>
-//             <a href="/fav" className="text-gray-700 hover:text-gray-900">
-//             <img 
-//                 src="/images/heart.png" 
-//                 alt="Furniro Logo" 
-//                 className="w-5 h-5 object-cover"
-//             />
-//             </a>
-//             <a href="/CartPage" className="text-gray-700 hover:text-gray-900">
-//             <img 
-//                 src="/images/cart.png" 
-//                 alt="Furniro Logo" 
-//                 className="w-5 h-5 object-cover"
-//             />
-//             </a>
-//           </div>
-//         </div>
-//       </header>
-//     );
-//   }
 'use client'
 import { useState } from 'react';
 import Link from 'next/link';
-
+import { useSelector } from 'react-redux';
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
-
+    const { cartItems } = useSelector((state) => state.cart);
     return (
       <header className="bg-white sticky top-0 z-50">
         <div className="container mx-auto flex justify-between items-center py-4 px-4 md:px-10">
@@ -113,14 +56,22 @@ export default function Navbar() {
             space-y-6 md:space-y-0
             z-40
           `}>
+            
             <Link href="/" className="text-black hover:text-gray-800 hover:font-bold" onClick={toggleMenu}>
               Home
             </Link>
             <Link href="/shop" className="text-black hover:text-gray-800 hover:font-bold" onClick={toggleMenu}>
               Shop
             </Link>
-            <Link href="/" className="text-black hover:text-gray-800 hover:font-bold" onClick={toggleMenu}>
+            
+            <Link href="/About" className="text-black hover:text-gray-800 hover:font-bold" onClick={toggleMenu}>
               About
+            </Link>
+            <Link href="/CartPage" className="text-black hover:text-gray-800 hover:font-bold md:hidden" onClick={toggleMenu}>
+              Cart
+            </Link>
+            <Link href="/Checkout" className="text-black hover:text-gray-800 hover:font-bold md:hidden" onClick={toggleMenu}>
+            Checkout
             </Link>
           </nav>
          
@@ -133,33 +84,41 @@ export default function Navbar() {
             border-t md:border-t-0
             ${isMenuOpen ? 'hidden md:flex' : 'flex'}
           `}>
-            <Link href="/profile" className="text-gray-700 hover:text-gray-900">
+            <Link href="/" className="text-gray-700 hover:text-gray-900">
               <img
                   src="/images/Person.png"
                   alt="Profile"
                   className="w-5 md:w-6 h-auto object-cover"
               />
             </Link>
-            <Link href="/search" className="text-gray-700 hover:text-gray-900">
+            <Link href="/" className="text-gray-700 hover:text-gray-900">
               <img
                   src="/images/search.png"
                   alt="Search"
                   className="w-5 md:w-5 h-auto object-cover"
               />
             </Link>
-            <Link href="/fav" className="text-gray-700 hover:text-gray-900">
+            <Link href="/" className="text-gray-700 hover:text-gray-900">
               <img
                   src="/images/heart.png"
                   alt="Favorites"
                   className="w-5 md:w-5 h-auto object-cover"
               />
             </Link>
-            <Link href="/CartPage" className="text-gray-700 hover:text-gray-900">
+           
+
+              <Link href="/CartPage" className="text-gray-700 hover:text-gray-900 relative">
               <img
                   src="/images/cart.png"
                   alt="Cart"
                   className="w-5 md:w-5 h-auto object-cover"
               />
+              
+              { cartItems.length> 0 && (
+                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
+                  {cartItems.length}
+                </span>
+              )}
             </Link>
           </div>
         </div>

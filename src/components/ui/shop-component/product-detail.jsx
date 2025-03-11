@@ -253,8 +253,17 @@
 "use client"
 import React, { useState } from "react";
 import ShoppingCart from '@/components/ui/shop-component/cart';
-
+import { useSelector } from "react-redux";
 const ProductDetail = () => {
+ 
+  const selectedProduct = useSelector((state) => state.product.selectedProduct);
+  const product = selectedProduct || {
+    name: "Asgaard Sofa",
+    price: "25000",
+    description: "A stylish and comfy seating piece, perfect for relaxing and entertaining",
+    image:'/images/mainsofa.png'
+  };
+  console.log(product)
   const [quantity, setQuantity] = useState(1);
   const [selectedSize, setSelectedSize] = useState("L");
   const [selectedColor, setSelectedColor] = useState("blue");
@@ -272,15 +281,15 @@ const ProductDetail = () => {
     <div className="div">
       <div className="flex items-center bg-[#F9F1E7] h-[4rem] px-8">
         <div className="text-gray-500 text-sm font-medium flex flex-row">
-          <a href="#" className="hover:underline mt-1 mx-4">Home</a>
+          <a href="/" className="hover:underline mt-1 mx-4">Home</a>
           <span className="mt-2 ml-2"><img src="/images/arrownav.png" /></span>
-          <a href="#" className="hover:underline ml-4 mt-1 mr-4">Shop</a>
+          <a href="/shop" className="hover:underline ml-4 mt-1 mr-4">Shop</a>
           <span className="mx-2 border-r-2 border-black mt-2 mr-2">
             <img src="/images/arrownav.png" className="mr-6 " />
           </span>
         </div>
         <div className="text-gray-900 text-md font-medium mt-1.5 ml-4">
-          <a href="#" className="hover:underline">Asgaard sofa</a>
+          <a href="#" className="hover:underline">{product.name}</a>
         </div>
       </div>
 
@@ -297,15 +306,15 @@ const ProductDetail = () => {
             ))}
           </div>
           <div className="bg-[#F9F1E7] rounded-lg flex justify-center p-4">
-            <img src="/images/mainsofa.png" alt="Main Product" className="object-cover w-full max-w-[300px] md:max-w-full" />
+            <img src= {`${product.image}`} alt="Main Product" className="object-cover w-full h-[400px] max-w-[300px] md:max-w-full" />
           </div>
         </div>
 
         <div className="md:w-2/3 px-4 md:px-10">
-          <h1 className="text-2xl md:text-3xl">Asgaard sofa</h1>
-          <p className="text-lg md:text-xl text-sadboihours mt-2 font-bold">Rs. 250,000.00</p>
+          <h1 className="text-2xl md:text-3xl">{product.name}</h1>
+          <p className="text-lg md:text-xl text-sadboihours mt-2 font-bold">Rs. {product.price}</p>
           <p className="mt-4 text-gray-500 text-sm md:text-base">
-            Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound.
+            {product.description}
           </p>
 
           <div className="mt-6">
@@ -350,7 +359,7 @@ const ProductDetail = () => {
               <span className="px-4 py-2 text-lg">{quantity}</span>
               <button onClick={() => handleQuantityChange("increment")} className="px-4 py-2 text-lg font-semibold">+</button>
             </div>
-            <ShoppingCart />
+            <ShoppingCart  item={product}/>
           </div>
 
           <div className="border-b border-gray-200 mt-6 md:mr-[10rem]"></div>

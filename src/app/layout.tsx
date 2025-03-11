@@ -2,7 +2,7 @@ import "./globals.css";
 import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/footer";
 import { Poppins } from "next/font/google";
-
+import ReduxProvider from '@/app/providers'
 // Import Poppins with specific weights
 const poppins = Poppins({
   subsets: ["latin"],
@@ -22,10 +22,13 @@ export default function RootLayout({   children,
   return (
     <html lang="en">
       <body className={`${poppins.className} antialiased`}>
+      <ReduxProvider>
         <Navbar />
         {children}
         <Footer />
+      </ReduxProvider>
       </body>
     </html>
   );
 }
+

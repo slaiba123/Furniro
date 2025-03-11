@@ -321,32 +321,6 @@ const Headershop = ({ onLayoutChange, onimgchange, imgdisplay }) => {
           Showing 1–{imgdisplay} of 32 results
         </p>
 
-        {/* Right Side - Sorting & Showing Options */}
-        {/* <div className="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-4 w-full md:w-auto"> */}
-          {/* Items Per Page Selector */}
-          {/* <div className="flex items-center space-x-2 w-full sm:w-auto">
-            <span className="text-gray-800 min-w-[40px]">Show</span>
-            <select
-              className="border border-gray-300 rounded px-3 py-1 bg-white text-gray-800 w-full sm:w-auto"
-              onChange={(e) => onimgchange(e.target.value)}
-            >
-              <option value="8">8</option>
-              <option value="16">16</option>
-              <option value="32">32</option>
-            </select>
-          </div> */}
-          
-          {/* Sort By Selector */}
-          {/* <div className="flex items-center space-x-2 w-full sm:w-auto">
-            <span className="text-gray-800 min-w-[50px]">Sort by</span>
-            <select className="border border-gray-300 rounded px-3 py-1 bg-white text-gray-800 w-full sm:w-auto">
-              <option value="default">Default</option>
-              <option value="price-low-high">Price: Low to High</option>
-              <option value="price-high-low">Price: High to Low</option>
-              <option value="newest">Newest</option>
-            </select>
-          </div>
-        </div> */}
 
 
 <div className="grid grid-cols-2 gap-2 w-full md:flex md:flex-row md:items-center md:space-x-4 md:w-auto">
