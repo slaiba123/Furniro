@@ -56,6 +56,15 @@ export default function Navbar() {
             space-y-6 md:space-y-0
             z-40
           `}>
+            {/* Close Button (X) for Mobile - Only visible in mobile view */}
+            <button 
+              onClick={toggleMenu}
+              className="absolute top-4 right-4 md:hidden text-black focus:outline-none"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
             
             <Link href="/" className="text-black hover:text-gray-800 hover:font-bold" onClick={toggleMenu}>
               Home
@@ -67,12 +76,7 @@ export default function Navbar() {
             <Link href="/About" className="text-black hover:text-gray-800 hover:font-bold" onClick={toggleMenu}>
               About
             </Link>
-            <Link href="/CartPage" className="text-black hover:text-gray-800 hover:font-bold md:hidden" onClick={toggleMenu}>
-              Cart
-            </Link>
-            <Link href="/Checkout" className="text-black hover:text-gray-800 hover:font-bold md:hidden" onClick={toggleMenu}>
-            Checkout
-            </Link>
+           
           </nav>
          
           {/* Icons Section */}
@@ -106,8 +110,7 @@ export default function Navbar() {
               />
             </Link>
            
-
-              <Link href="/CartPage" className="text-gray-700 hover:text-gray-900 relative">
+            <Link href="/CartPage" className="text-gray-700 hover:text-gray-900 relative">
               <img
                   src="/images/cart.png"
                   alt="Cart"
