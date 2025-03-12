@@ -3,7 +3,7 @@ import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/footer";
 import { Poppins } from "next/font/google";
 import ReduxProvider from '@/app/providers'
-// Import Poppins with specific weights
+
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800","900"], 

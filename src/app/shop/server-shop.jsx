@@ -8,7 +8,7 @@ export default function ShopClient({ initialItems }) {
   const [layout, setLayout] = useState("grid");
   const [imgdisplay, setimgdisplay] = useState(16);
  
-  // Handle possibility of undefined
+
   const items = initialItems || [];
   console.log('Client component initialItems:', initialItems);
  

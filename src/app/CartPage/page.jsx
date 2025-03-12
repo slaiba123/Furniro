@@ -13,10 +13,8 @@ export default function CartPage() {
     dispatch(removeFromCart(itemId));
   };
 
-  // Add this for debugging
-  console.log("Cart Items:", cartItems);
-  console.log("Total Quantity:", totalQuantity);
-  console.log("Total Price:", totalPrice);
+
+  
   const savedCart = localStorage.getItem('cart');
 
   return (
@@ -28,9 +26,9 @@ export default function CartPage() {
       </div>
 
       <div className="flex flex-col lg:flex-row gap-8">
-        {/* Cart Items Section */}
+       
         <div className="w-full lg:w-3/4 overflow-x-auto">
-        {/* Header row - changes to vertical on mobile */}
+       
         <div className="bg-[#F9F1E7] p-4 hidden sm:grid sm:grid-cols-4 gap-4 items-center text-sm font-semibold text-gray-700 mb-6">
           <span>Product</span>
           <span>Price</span>
@@ -38,7 +36,7 @@ export default function CartPage() {
           <span>Subtotal</span>
         </div>
         
-        {/* Empty cart message */}
+       
         {cartItems.length === 0 && (
           <div className="text-center py-8">
             <p className="text-lg">Your cart is empty</p>
@@ -48,13 +46,13 @@ export default function CartPage() {
           </div>
         )}
         
-        {/* Cart items */}
+     
         {cartItems.map((item) => (
           <div
             key={item.id}
             className="mb-6 border-b pb-4 sm:border-0 sm:pb-0"
           >
-            {/* Mobile view - shows as blocks/cards */}
+        
             <div className="sm:hidden flex flex-col space-y-3">
                
         <div className="flex gap-[130px]">
@@ -94,7 +92,7 @@ export default function CartPage() {
               </div>
             </div>
             
-            {/* Desktop view - shows as grid */}
+          
             <div className="hidden sm:grid sm:grid-cols-4 gap-4 items-center py-4">
               <div className="flex items-center gap-4">
                 <img
@@ -124,7 +122,6 @@ export default function CartPage() {
         ))}
         </div>
 
-        {/* Cart Totals Section */}
         <div className="w-full lg:w-1/4">
           <div className="bg-[#F9F1E7] p-6 rounded-lg">
             <h2 className="text-xl font-semibold mb-6 text-center">Cart Totals</h2>

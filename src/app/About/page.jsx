@@ -5,7 +5,7 @@ import Link from 'next/link';
 export default function About() {
   return (
     <div className="bg-white min-h-screen">
-      {/* Hero Section */}
+      
       <div className="relative w-full h-80 bg-[#F9F1E7]">
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center  ">
           <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">About Us</h1>
@@ -17,7 +17,7 @@ export default function About() {
         </div>
       </div>
 
-      {/* Our Story Section */}
+     
       <div className="container mx-auto py-16 px-4 md:px-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <div>
@@ -47,12 +47,12 @@ export default function About() {
         </div>
       </div>
 
-      {/* Values Section */}
+     
       <div className="bg-gray-50 py-16">
         <div className="container mx-auto px-4 md:px-10">
           <h2 className="text-3xl font-bold text-center mb-12">Our Values</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Value Card 1 */}
+          
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <div className="bg-amber-100 p-3 rounded-full w-14 h-14 flex items-center justify-center mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-amber-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -66,7 +66,6 @@ export default function About() {
               </p>
             </div>
 
-            {/* Value Card 2 */}
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <div className="bg-green-100 p-3 rounded-full w-14 h-14 flex items-center justify-center mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-green-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -80,7 +79,7 @@ export default function About() {
               </p>
             </div>
 
-            {/* Value Card 3 */}
+            
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <div className="bg-blue-100 p-3 rounded-full w-14 h-14 flex items-center justify-center mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -97,64 +96,59 @@ export default function About() {
         </div>
       </div>
 
-      {/* Team Section */}
+      
       <div className="container mx-auto py-16 px-4 md:px-10">
         <h2 className="text-3xl font-bold text-center mb-12">Meet Our Team</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Team Member 1 */}
+          
           <div className="text-center">
             <div className="mb-4 overflow-hidden rounded-lg">
               <img 
                 src="/images/femp1.jpg" 
                 alt="Team Member" 
                 className="w-full h-auto transition-transform duration-300 hover:scale-105"
-                // If you don't have this image, use a placeholder:
-                // src="/api/placeholder/300/300" 
+                 
               />
             </div>
             <h3 className="text-xl font-bold mb-1">Jessica Chen</h3>
             <p className="text-gray-600">Founder & Creative Director</p>
           </div>
 
-          {/* Team Member 2 */}
+         
           <div className="text-center">
             <div className="mb-4 overflow-hidden rounded-lg">
               <img 
                 src="/images/memp1.jpg" 
                 alt="Team Member" 
                 className="w-full h-auto transition-transform duration-300 hover:scale-105"
-                // If you don't have this image, use a placeholder:
-                // src="/api/placeholder/300/300" 
+                
               />
             </div>
             <h3 className="text-xl font-bold mb-1">Marcus Williams</h3>
             <p className="text-gray-600">Head of Design</p>
           </div>
 
-          {/* Team Member 3 */}
+         
           <div className="text-center">
             <div className="mb-4 overflow-hidden rounded-lg">
               <img 
                 src="/images/femp2_.jpg" 
                 alt="Team Member" 
                 className="w-full h-auto transition-transform duration-300 hover:scale-105"
-                // If you don't have this image, use a placeholder:
-                // src="/api/placeholder/300/300" 
+               
               />
             </div>
             <h3 className="text-xl font-bold mb-1">Olivia Patel</h3>
             <p className="text-gray-600">Production Manager</p>
           </div>
 
-          {/* Team Member 4 */}
           <div className="text-center">
             <div className="mb-4 overflow-hidden rounded-lg">
               <img 
                 src="/images/memp2.jpg" 
                 alt="Team Member" 
                 className="w-full h-auto transition-transform duration-300 hover:scale-105"
-                // If you don't have this image, use a placeholder:
-                // src="/api/placeholder/300/300" 
+               
               />
             </div>
             <h3 className="text-xl font-bold mb-1">David Nguyen</h3>
@@ -163,29 +157,28 @@ export default function About() {
         </div>
       </div>
 
-      {/* Stats Section */}
       <div className="bg-amber-50 py-16">
         <div className="container mx-auto px-4 md:px-10">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-            {/* Stat 1 */}
+           
             <div>
               <p className="text-4xl font-bold text-amber-800 mb-2">10+</p>
               <p className="text-gray-700 font-medium">Years of Experience</p>
             </div>
             
-            {/* Stat 2 */}
+           
             <div>
               <p className="text-4xl font-bold text-amber-800 mb-2">5,000+</p>
               <p className="text-gray-700 font-medium">Happy Customers</p>
             </div>
             
-            {/* Stat 3 */}
+            
             <div>
               <p className="text-4xl font-bold text-amber-800 mb-2">500+</p>
               <p className="text-gray-700 font-medium">Furniture Collections</p>
             </div>
             
-            {/* Stat 4 */}
+           
             <div>
               <p className="text-4xl font-bold text-amber-800 mb-2">20+</p>
               <p className="text-gray-700 font-medium">Awards Received</p>
@@ -194,7 +187,6 @@ export default function About() {
         </div>
       </div>
 
-      {/* CTA Section */}
       <div className="bg-white py-16">
         <div className="container mx-auto px-4 md:px-10 text-center">
           <h2 className="text-3xl font-bold mb-6">Visit Our Showroom</h2>

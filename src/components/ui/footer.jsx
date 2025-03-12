@@ -4,7 +4,7 @@ function Footer() {
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap">
           
-          {/* Logo - Full width on mobile */}
+        
           <div className="w-full mb-6 pl-2 sm:pl-4">
             <h1 className="text-lg sm:text-xl font-bold">Funiro.</h1>
           </div>

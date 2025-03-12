@@ -12,7 +12,7 @@ export default function Navbar() {
     return (
       <header className="bg-white sticky top-0 z-50">
         <div className="container mx-auto flex justify-between items-center py-4 px-4 md:px-10">
-          {/* Logo Section */}
+         
           <div className="text-xl font-bold flex items-center space-x-2">
             <img
                 src="/images/Logo.png"
@@ -24,7 +24,7 @@ export default function Navbar() {
             </Link>
           </div>
          
-          {/* Mobile Menu Toggle */}
+      
           <div className="md:hidden">
             <button 
               onClick={toggleMenu} 
@@ -42,7 +42,7 @@ export default function Navbar() {
             </button>
           </div>
          
-          {/* Navigation Links */}
+          
           <nav className={`
             fixed inset-0 bg-white transform 
             ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}
@@ -56,7 +56,7 @@ export default function Navbar() {
             space-y-6 md:space-y-0
             z-40
           `}>
-            {/* Close Button (X) for Mobile - Only visible in mobile view */}
+            
             <button 
               onClick={toggleMenu}
               className="absolute top-4 right-4 md:hidden text-black focus:outline-none"
@@ -79,7 +79,6 @@ export default function Navbar() {
            
           </nav>
          
-          {/* Icons Section */}
           <div className={`
             fixed bottom-0 left-0 right-0 bg-white md:static 
             flex items-center justify-around md:justify-between 

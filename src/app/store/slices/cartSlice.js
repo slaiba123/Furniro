@@ -2,7 +2,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { nanoid } from "nanoid";
 
-// Load initial state from localStorage if available
+
 const loadStateFromStorage = () => {
   if (typeof window !== 'undefined') {
     const savedCart = localStorage.getItem('cart');
@@ -19,7 +19,7 @@ const loadStateFromStorage = () => {
 
 const initialState = loadStateFromStorage();
 
-// Helper function to save state to localStorage
+
 const saveStateToStorage = (state) => {
   if (typeof window !== 'undefined') {
     localStorage.setItem('cart', JSON.stringify({
@@ -52,7 +52,7 @@ const cartSlice = createSlice({
       state.totalPrice += itemWithId.price;
       console.log(state.cartItems);
       
-      // Save updated state to localStorage
+      
       saveStateToStorage(state);
     },
     removeFromCart: (state, action) => {
@@ -61,8 +61,7 @@ const cartSlice = createSlice({
         state.totalQuantity -= item.quantity;
         state.totalPrice -= item.price * item.quantity;
         state.cartItems = state.cartItems.filter((p) => p.name !== action.payload.name);
-        
-        // Save updated state to localStorage
+       
         saveStateToStorage(state);
       }
     },
@@ -70,28 +69,28 @@ const cartSlice = createSlice({
       const item = state.cartItems.find((p) => p.name === action.payload.name);
       if (item) {
         if (item.quantity > 1) {
-          // Decrease quantity by 1
+          
           item.quantity -= 1;
           state.totalQuantity -= 1;
           state.totalPrice -= item.price;
         } else {
-          // If quantity is 1, remove item from cart
+          
           state.totalQuantity -= 1;
           state.totalPrice -= item.price;
           state.cartItems = state.cartItems.filter((p) => p.name !== action.payload.name);
         }
         
-        // Save updated state to localStorage
+        
         saveStateToStorage(state);
       }
     },
-    // Add this action to clear cart (optional but often useful)
+   
     clearCart: (state) => {
       state.cartItems = [];
       state.totalQuantity = 0;
       state.totalPrice = 0;
       
-      // Clear localStorage
+   
       if (typeof window !== 'undefined') {
         localStorage.removeItem('cart');
       }

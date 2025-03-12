@@ -19,7 +19,7 @@ const loadProductFromStorage = () => {
 
 const initialState = loadProductFromStorage();
 
-// Helper function to save product to localStorage
+
 const saveProductToStorage = (product) => {
   if (typeof window !== 'undefined') {
     try {
@@ -42,13 +42,10 @@ export const productSlice = createSlice({
       console.log(action.payload);
       state.selectedProduct = action.payload;
       
-      // Save to localStorage
       saveProductToStorage(action.payload);
     },
     clearSelectedProduct: (state) => {
-      state.selectedProduct = null;
-      
-      // Remove from localStorage
+      state.selectedProduct = null; 
       saveProductToStorage(null);
     },
   },
