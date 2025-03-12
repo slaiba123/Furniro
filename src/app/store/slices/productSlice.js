@@ -1,3 +1,4 @@
+'use client'
 import { createSlice } from '@reduxjs/toolkit';
 const loadProductFromStorage = () => {
   if (typeof window !== 'undefined') {
