@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import Footer2 from "@/components/ui/Footer2";
 import Link from "next/link";
