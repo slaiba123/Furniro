@@ -4,7 +4,7 @@ import Footer2 from '@/components/ui/Footer2';
 
 export default function ItemsGrid({ items }) {
   if (typeof window !== "undefined" && window.innerWidth < 640) {
-    return <p className='justify-center items-center p-8'>To view grid please switch to a larger screen.</p>; // Won't render anything on mobile
+    return <p className='justify-center items-center p-8'>To view grid please switch to a larger screen.</p>; 
   }
    
       return (
