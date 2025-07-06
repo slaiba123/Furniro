@@ -1,7 +1,6 @@
-````markdown
 # FURNIRO 🛍️
 
-A fully functional, modern e-commerce platform built with **Next.js**, **Sanity CMS**, **Stripe**, **Clerk Authentication**, and **ShadCN UI**. URNIRO delivers a pixel-perfect shopping experience with secure payments and CMS-driven content — all starting from a Figma design.
+A fully functional, modern e-commerce platform built with **Next.js**, **Sanity CMS**, **Stripe**, **Clerk Authentication**, and **ShadCN UI**. FURNIRO delivers a pixel-perfect shopping experience with secure payments and CMS-driven content — all starting from a Figma design.
 
 ## ✨ Features
 
@@ -12,7 +11,6 @@ A fully functional, modern e-commerce platform built with **Next.js**, **Sanity 
 - 📝 Content management powered by **Sanity.io**
 - 🎨 Pixel-perfect design implementation from **Figma**
 
-
 ## 🛠️ Tech Stack
 
 - **Frontend:** Next.js 14 (App Router), Tailwind CSS, ShadCN UI
@@ -21,14 +19,14 @@ A fully functional, modern e-commerce platform built with **Next.js**, **Sanity 
 - **Payments:** Stripe Checkout
 - **Deployment:** *(Optional: Vercel or Netlify if deployed)*
 
-## Getting Started
+## 🚀 Getting Started
 
 ### 1. Clone the repo
 
 ```bash
 git clone https://github.com/slaiba123/Furniro.git
 cd Furniro
-````
+
 
 ### 2. Install dependencies
 
