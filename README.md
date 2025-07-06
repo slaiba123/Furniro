@@ -17,7 +17,7 @@ A fully functional, modern e-commerce platform built with **Next.js**, **Sanity 
 - **CMS:** Sanity.io
 - **Auth:** Clerk.dev
 - **Payments:** Stripe Checkout
-- **Deployment:** *(Optional: Vercel or Netlify if deployed)*
+- **Deployment:** (https://furniro-6i8z.vercel.app/)
 
 ## 🚀 Getting Started
 
